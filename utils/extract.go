@@ -33,9 +33,6 @@ func unzip(src, dest string) error {
 	}
 	defer r.Close()
 
-	var size = len(r.File)
-	fmt.Println(size)
-
 	for _, f := range r.File {
 		err = func(f *zip.File, dest string) error {
 			rc, err := f.Open()
